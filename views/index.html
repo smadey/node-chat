@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Chat</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="mainContent">
+            <ul class="userList">
+                <li class="userItem-count">Online(<span id="onlineUserCount"></span>)</li>
+            </ul>
+            <div>
+                <ul class="messageList">
+                    <li class="messageItem-title">Messages:</li>
+                </ul>
+                <div>
+                    <input id="txtMessage" type="text" class="form-control">
+                    <button id="btnSendMessage" class="btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="modal fade" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Choose a name</h4>
+                </div>
+                <div class="modal-body form-inline">
+                    <p>Choose a name :</p>
+                    <input type="text" id="txtUsername" class="form-control">
+                    <div id="alert-existUsername" class="alert alert-error" style="display: none;">This name is already used ! Choose another one.</div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnChooseUsername" class="btn btn-primary">Go to the chat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
